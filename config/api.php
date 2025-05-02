@@ -18,6 +18,7 @@ return function () {
       'pattern' => 'listings/(:all)/(:all)',
       'method' => 'GET',
       'action' => function ($language_code, $path) {
+        $ignored = option('chrisbeluga.navigation.ignore', []);
         $content = [];
         $breadcrumbs = [];
         $getData = $path !== 'site' ? true : false;
@@ -51,6 +52,9 @@ return function () {
           }
 
           foreach ($data->children() as $item) {
+            if (in_array($item->intendedTemplate()->name(), $ignored)) {
+                continue;
+            }
             $title = $item->title()->value();
             if ($multilang && ($item->content($language_code)->title()->value() != null)) {
               $title=$item->content($language_code)->title()->value();
