@@ -80,7 +80,7 @@ $refresh_item = function($item) use (&$refresh_item) {
     if (!empty($item['uuid_uri']) && Uuids::enabled()) {
       $page=kirby()->page($item['uuid_uri']);
       // Refresh the 'id' to handle any changes
-      $item['id'] = $page->id();
+      $item['id'] = $page?->id() ?? null;
     }
     if (!$page) {
       if ($page=kirby()->page($item['id'])) {
