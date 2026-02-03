@@ -17,18 +17,18 @@
         <k-dropdown-content
             ref="menu">
           <k-dropdown-item v-on:click="modal_open('default')">
-						<span class="k-menu-title">
-							{{ $t('menu.link.title') }}
-						</span>
+            <span class="k-menu-title">
+              {{ $t('menu.link.title') }}
+            </span>
             <p class="k-menu-subtitle">
               {{ $t('menu.link.text') }}
             </p>
           </k-dropdown-item>
           <k-dropdown-item
               v-on:click="modal_open('custom')">
-						<span class="k-menu-title">
-							{{ $t('menu.custom.title') }}
-						</span>
+            <span class="k-menu-title">
+              {{ $t('menu.custom.title') }}
+            </span>
             <p class="k-menu-subtitle">
               {{ $t('menu.custom.text') }}
             </p>
@@ -476,9 +476,9 @@ export default {
     computed_breadcrumbs() {
       return this.query.breadcrumbs.length >= 2 ? this.query.breadcrumbs[this.query.breadcrumbs.length - 2].id : 'site'
     },
-		panel_content_has_diff() {
-			return this.$panel.content.hasDiff();
-		},
+    panel_content_has_diff() {
+      return this.$panel.content.hasDiff();
+    },
   },
   mounted() {
     this.action_fetch('site');
@@ -490,10 +490,6 @@ export default {
 .navigation-field {
   .k-field-depth {
     text-align: right;
-
-    strong {
-      color: #000;
-    }
   }
 
   .k-field-header {
@@ -514,7 +510,6 @@ export default {
 
         .k-menu-title {
           opacity: 1;
-          color: #fff;
           width: 100%;
           display: block;
           margin-bottom: 8px;
@@ -610,7 +605,6 @@ export default {
     left: 26px;
     right: 0;
     bottom: 0;
-    background: #e6e6e6;
     transition: all 0.3s ease-in-out;
   }
 
